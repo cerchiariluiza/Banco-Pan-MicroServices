@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.luiza.microcalculadora.model.Tabela;
 
 @Component
-@FeignClient(name = "micro-tabela", url = "localhost:8001", path = "/tabela")
+@FeignClient(name = "micro-tabela", path = "/tabela")
 public interface WorkerFeignClient {
 
 	//primeira parte 

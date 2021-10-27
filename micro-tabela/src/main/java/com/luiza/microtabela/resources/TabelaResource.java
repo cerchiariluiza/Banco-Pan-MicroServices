@@ -20,7 +20,11 @@ import org.springframework.core.env.Environment;
 @RestController
 @RequestMapping(value = "/tabela")
 public class TabelaResource {
+/////////////////////ATENCAO AQUI É O PROJETO MICRO TABELA AGORA
+	private static Logger logger = LoggerFactory.getLogger(TabelaResource.class);
 
+	@Autowired
+	private Environment env;
 
 	@Autowired
 	private TabelaRepository repository;
@@ -33,6 +37,7 @@ public class TabelaResource {
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Tabela> findById(@PathVariable Long id) {
+		logger.info("PORT = " + env.getProperty("local.server.port"));
 
 		Tabela obj = repository.findById(id).get();
 		return ResponseEntity.ok(obj);

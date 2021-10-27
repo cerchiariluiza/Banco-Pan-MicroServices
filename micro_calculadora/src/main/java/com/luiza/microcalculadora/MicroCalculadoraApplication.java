@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-
+@RibbonClient(name = "micro-tabela")
 @EnableFeignClients
 @SpringBootApplication
 public class MicroCalculadoraApplication {
